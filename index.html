@@ -55,3 +55,95 @@ Esp:
 -Show | Tool/Distance
 -Out Of Fov | Max Size: 15 / Max Offset: 700 | Settings: Outline/Blinking
 </pre>
+<section class="box-panel">
+	<div class="widget-container">
+		<div class="flip-box common-flip-style">
+			<div class="box-front common-box-style">
+				<div class="box-content-wrapper">
+<!-- 					<div class="box-content">
+						<h1>Hello there !</h1>
+						<p>I am the <strong>front side</strong> of the box.</p>
+					</div> -->
+				</div>
+			</div>
+			<div class="box-back common-box-style box-bgi-effect">
+				<div class="box-content-wrapper">
+					<div class="box-content">
+						<h1>Hello there !</h1>
+						<p>I am the <strong>back side</strong> of the box.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+body{
+	background: linear-gradient(to right, #4568dc, #b06ab3);
+}
+
+.box-panel{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 35px 0;
+}
+
+.widget-container{
+	transition: all 0.3s ease;
+	.common-flip-style{
+		width: 250px;
+		height: 250px;
+		cursor: pointer;
+		.common-box-style{
+			transform-style: preserve-3d;
+			backface-visibility: hidden;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			-webkit-transition: all .6s ease-in-out;
+			-o-transition: all .6s ease-in-out;
+			transition: all .6s ease-in-out;
+			border-radius: 10px;
+		}
+	}
+}
+
+.flip-box{
+	position: relative;
+	perspective: 1000px;
+	transform-style: preserve-3d;
+	.box-front{
+		transform: none;
+		z-index: 1;
+		background-image: url('https://cdn.discordapp.com/attachments/1013498540443582534/1017108957191483482/pxArt.png');
+		background-position: center center;
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+	.box-back{
+		width: calc(100% - 10px);
+		height: calc(100% - 10px);
+		transform: rotateX(0) rotateY(-180deg);
+		background: #fff;
+		border: 5px solid orange;
+	}
+	&:hover{
+		.box-front{
+			transform: rotateX(0) rotateY(180deg);
+		}
+		.box-back{
+			transform: none;
+		}
+	}
+}
+
+.box-content-wrapper{
+	display: flex;
+	width: 100%;
+	height: 100%;
+	flex-direction: column;
+	justify-content: center;
+	align-items: stretch;
+	text-align: center;
+	transform: translateZ(90px);
+}
