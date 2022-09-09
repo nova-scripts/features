@@ -1,5 +1,6 @@
 body {
   background: linear-gradient(to right, #4568dc, #00a4d6);
+  overflow: hidden; /* Hide scrollbars */
 }
 
 .box-panel {
