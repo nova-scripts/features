@@ -48,7 +48,9 @@ body {
   height: calc(100% - 10px);
   transform: rotateX(0) rotateY(-180deg);
   background: #fff;
-  border: 5px solid orange;
+  border: 5px;
+  border-style: solid;
+  border-color: #4568dc;
 }
 .flip-box:hover .box-front {
   transform: rotateX(0) rotateY(180deg);
