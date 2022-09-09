@@ -4,8 +4,8 @@ body {
 
 .box-panel {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: right;
+  align-items: right;
   padding: 35px 0;
 }
 
@@ -13,7 +13,7 @@ body {
   transition: all 0.3s ease;
 }
 .widget-container .common-flip-style {
-  width: 250px;
+  width: 500px;
   height: 250px;
   cursor: pointer;
 }
